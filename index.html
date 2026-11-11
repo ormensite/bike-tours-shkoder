@@ -1,0 +1,468 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover Shkoder, Albania by bicycle. Explore guided bike tours, beautiful landscapes and authentic local experiences with Bike Tours Shkoder.">
+  <meta name="theme-color" content="#102b25">
+  <title>Bike Tours Shkoder | Discover Albania on Two Wheels</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --green: #173b30;
+      --green-light: #285a46;
+      --cream: #f7f5ef;
+      --gold: #d9a85d;
+      --text: #26342e;
+      --muted: #727b74;
+      --white: #fff;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    .container {
+      width: min(1160px, 90%);
+      margin: auto;
+    }
+
+    header {
+      background: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 15px #00000008;
+    }
+
+    nav {
+      min-height: 78px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--green);
+      line-height: 1.2;
+    }
+
+    .logo span {
+      display: block;
+      font: 600 10px 'DM Sans', sans-serif;
+      letter-spacing: 3px;
+      color: var(--gold);
+      margin-top: 5px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover { color: var(--green-light); }
+
+    .nav-cta, .btn {
+      background: var(--green);
+      color: white;
+      padding: 13px 22px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 700;
+      display: inline-block;
+      transition: .2s;
+    }
+
+    .nav-cta:hover, .btn:hover {
+      background: var(--green-light);
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      color: white;
+      background:
+        linear-gradient(90deg, rgba(8,30,24,.83), rgba(8,30,24,.25)),
+        url('https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=2000&q=85') center/cover;
+    }
+
+    .hero-content { max-width: 720px; padding: 100px 0; }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
+
+    h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+    h1 {
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      font-size: 17px;
+      max-width: 540px;
+      color: #f0f0e9;
+      margin-bottom: 34px;
+    }
+
+    .btn-light {
+      background: var(--gold);
+      color: #17271f;
+      margin-left: 10px;
+    }
+
+    .btn-light:hover { background: #edc17c; }
+
+    .intro {
+      text-align: center;
+      padding: 90px 0 65px;
+      max-width: 760px;
+    }
+
+    .section-label {
+      color: #a87939;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 11px;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    h2 {
+      font-size: clamp(32px, 4vw, 46px);
+      color: var(--green);
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .intro p, .section-description {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .tours { padding: 30px 0 100px; }
+
+    .tour-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 38px;
+    }
+
+    .tour-card {
+      background: white;
+      border-radius: 7px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px #00000009;
+      transition: .25s;
+    }
+
+    .tour-card:hover { transform: translateY(-6px); }
+
+    .tour-card img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .tour-info { padding: 25px; }
+
+    .tour-info h3 {
+      color: var(--green);
+      font-size: 23px;
+      margin-bottom: 10px;
+    }
+
+    .tour-info p {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .tour-link {
+      color: var(--green-light);
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .about {
+      background: var(--green);
+      color: white;
+      padding: 95px 0;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .about img {
+      width: 100%;
+      height: 440px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    .about h2 { color: white; }
+
+    .about p {
+      color: #d6e0d8;
+      font-size: 15px;
+      margin-bottom: 25px;
+    }
+
+    .about .section-label { color: var(--gold); }
+
+    .experience {
+      padding: 95px 0;
+      text-align: center;
+    }
+
+    .experience-box {
+      background: white;
+      padding: 45px;
+      max-width: 800px;
+      margin: 35px auto 0;
+      border-radius: 6px;
+      box-shadow: 0 8px 30px #00000008;
+    }
+
+    .experience-box h3 {
+      color: var(--green);
+      font-size: 27px;
+      margin-bottom: 15px;
+    }
+
+    .experience-box p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .contact {
+      background: #eae9df;
+      padding: 85px 0;
+      text-align: center;
+    }
+
+    .contact p {
+      color: var(--muted);
+      margin-bottom: 25px;
+    }
+
+    footer {
+      background: #102b25;
+      color: #d6e0d8;
+      padding: 30px 0;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      color: white;
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 760px) {
+      nav { flex-wrap: wrap; padding: 17px 0; }
+      .nav-links { width: 100%; justify-content: space-between; gap: 10px; font-size: 12px; }
+      .nav-cta { display: none; }
+      .hero { min-height: 570px; }
+      .hero-content { padding: 75px 0; }
+      .btn { margin: 5px 5px 5px 0; }
+      .btn-light { margin-left: 0; }
+      .tour-grid { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; gap: 35px; }
+      .about img { height: 300px; }
+      .experience-box { padding: 28px 20px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="container">
+      <a href="#" class="logo">
+        BIKE TOURS SHKODER
+        <span>EXPLORE • DISCOVER • EXPERIENCE</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#tours">Our Tours</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <a href="#contact" class="nav-cta">BOOK YOUR TOUR</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <div class="eyebrow">Welcome to Northern Albania</div>
+          <h1>Discover Shkoder on Two Wheels</h1>
+          <p>
+            Experience the beauty of Shkoder, its stunning landscapes,
+            traditional villages and local culture. Explore Albania
+            one ride at a time.
+          </p>
+          <a href="#tours" class="btn">EXPLORE OUR TOURS</a>
+          <a href="#contact" class="btn btn-light">CONTACT US</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro container">
+      <div class="section-label">A Different Way to Explore</div>
+      <h2>More Than Just a Bike Ride</h2>
+      <p>
+        Discover the hidden beauty of Shkoder through unforgettable
+        cycling experiences. From peaceful lakeside roads to charming
+        villages, experience the region at your own pace.
+      </p>
+    </section>
+
+    <section class="tours container" id="tours">
+      <div style="text-align:center">
+        <div class="section-label">Explore With Us</div>
+        <h2>Our Experiences</h2>
+        <p class="section-description">
+          Discover the landscapes, traditions and beauty of Shkoder.
+        </p>
+      </div>
+
+      <div class="tour-grid">
+        <article class="tour-card">
+          <img src="https://images.unsplash.com/photo-1544191696-15693072e0b8?auto=format&fit=crop&w=900&q=80" alt="Cycling through nature">
+          <div class="tour-info">
+            <h3>Guided Bike Tours</h3>
+            <p>Explore the surroundings of Shkoder with a local cycling experience.</p>
+            <a href="#contact" class="tour-link">ASK ABOUT THIS TOUR →</a>
+          </div>
+        </article>
+
+        <article class="tour-card">
+          <img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=900&q=80" alt="Beautiful green landscapes">
+          <div class="tour-info">
+            <h3>Nature & Villages</h3>
+            <p>Discover peaceful roads, traditional villages and beautiful scenery.</p>
+            <a href="#contact" class="tour-link">ASK ABOUT THIS TOUR →</a>
+          </div>
+        </article>
+
+        <article class="tour-card">
+          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Beautiful outdoor travel landscape">
+          <div class="tour-info">
+            <h3>Local Experiences</h3>
+            <p>Experience the local atmosphere and discover the authentic side of Shkoder.</p>
+            <a href="#contact" class="tour-link">ASK ABOUT THIS TOUR →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container about-grid">
+        <div>
+          <div class="section-label">Our Story</div>
+          <h2>Discover Shkoder Like a Local</h2>
+          <p>
+            Bike Tours Shkoder is about discovering the beauty of
+            Northern Albania through authentic local experiences.
+            We want every visitor to enjoy the landscapes, culture
+            and hospitality that make this region special.
+          </p>
+          <p>
+            Starting from Michiscamping, or another meeting point
+            in Shkoder upon request, your adventure begins with us.
+          </p>
+          <a href="#contact" class="btn btn-light">GET IN TOUCH</a>
+        </div>
+
+        <img
+          src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1100&q=85"
+          alt="Nature and outdoor adventure">
+      </div>
+    </section>
+
+    <section class="experience container">
+      <div class="section-label">The Local Touch</div>
+      <h2>Experience the Heart of Albania</h2>
+      <div class="experience-box">
+        <h3>Start Your Adventure in Shkoder</h3>
+        <p>
+          Enjoy a personal cycling experience, explore beautiful
+          surroundings and discover the local hospitality of
+          Northern Albania.
+        </p>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="section-label">Your Adventure Starts Here</div>
+        <h2>Ready to Explore Shkoder?</h2>
+        <p>Get in touch with us to ask about tours and availability.</p>
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=Bike+Tours+Shkoder+Michiscamping"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn"
+        >
+          FIND US ON GOOGLE MAPS
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-logo">BIKE TOURS SHKODER</div>
+    <p>Discover • Explore • Experience</p>
+    <p>© <span id="year"></span> Bike Tours Shkoder. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
